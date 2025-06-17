@@ -23,32 +23,30 @@ h1{
 }
 
 .keyboard{
-  width: 60vw;
+  width: 50vw;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 1rem;
+  padding: 0.5rem;
   border: 2px solid grey;
 }
 
 
 button {
-  width: 5vw;
-  height: 5vw;
+  width: 4vw;
+  height: 4vw;
   border-radius: 8px;
   border: 1px solid transparent;
   padding: auto;
-  font-size: 2.5vw;
+  font-size: 2vw;
   font-weight: 500;
   font-family: inherit;
   text-align: center;
   cursor: pointer;
   color: black;
   transition: border-color 0.25s;
-  margin: 0.5rem;
-
-
+  margin: 0.3rem 0.5rem;
 }
 button:focus,
 button:focus-visible {
@@ -83,14 +81,14 @@ button:focus-visible {
 
 .display h1{
   padding: 1vh;
-  border-color: grey;
+  border-color: rgb(255, 255, 255);
   border-style: solid;
   border-width: 0 0 .3vw 0;
   margin: 1vh;
 }
 
 .opacity-0{
-  opacity: 0.2;
+  color: rgba(255, 0, 0, 0);
 }
 
 .plContainer{
@@ -100,13 +98,62 @@ button:focus-visible {
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .plContainer div{
+  position: relative;
   min-width: 5vw;
   width: auto;
   padding: 0.3rem;
   margin: 1vh 1vh;
   border-radius: 10px;
   font-weight: 600;
+}
+
+.skull{
+  position:absolute;
+  top: 0vh;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  line-height: 5vh;
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+  color: aliceblue;
+  opacity: .8;
+  border-radius: 10px;
+
+  z-index: 2;
+}
+
+.msg{
+  background-color: rgb(1, 100, 1);
+  color: rgb(255, 255, 255);
+  border-radius: 12px;
+  padding: 0 1vh;
+}
+
+.msg-danger{
+  background-color: rgb(255, 11, 11);
+  color: rgb(255, 255, 255);
+  border-radius: 12px;
+  padding: 0 1vh;
+}
+
+.new-game-btn{
+  /* width: 4vw; */
+  height: auto;
+  width: auto;
+  background-color: lightgreen;
+  font-size: 1.2rem;
+  padding: 1.4vh;
+  color: green;
+  font-weight: 1000;
+
+  &:hover{
+    background-color: green;
+    color: whitesmoke;
+  }
 }

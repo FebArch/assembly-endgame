@@ -6,7 +6,8 @@ import Result from "./components/Result"
 
 import generateRandomWord from "./generateRandomWord"
 
-import "./App.css"
+// import "./App.css"
+import "./tailwind.css"
 import { useState } from "react"
 
 export default function App() {
@@ -67,9 +68,9 @@ export default function App() {
     return <Key key={index} letter={e.letter} word={randomWordArrOfObj[1]} gameFinishedConditions={gameFinishedConditions} alphabetGuessed={e.alphabetGuessed} handleClick={catchLetterAndCheckIt} />
   })
   return (
-    <div className="container">
-      <h1>Assembly Endgame</h1>
-      <p>Guess the Avenger name in 10 Guesses to keep the programming world safe from Assembly!</p>
+    <div className="h-[90vh] w-[100vw] flex justify-around items-center flex-col bg-black text-white">
+      <h1 className="text-4xl text-gray-200">Assembly Endgame</h1>
+      <p className="text-gray-400 text-center w-80">Guess the Avenger name in 10 Guesses to keep the programming world safe from Assembly!</p>
 
       {(gameFinishedConditions[0] || gameFinishedConditions[1]) && <Result gameFinishedConditions={gameFinishedConditions} />}
       
@@ -77,11 +78,11 @@ export default function App() {
 
       <Display wordObjArr={randomWordArrOfObj[0]} />
 
-      <div className="keyboard">
+      <div className="mx-auto w-90 h-50 text-black bg-gray-900 rounded flex justify-evenly flex-wrap p-2 box-content">
         {keyElements}
       </div>
 
-      {(gameFinishedConditions[0] || gameFinishedConditions[1]) && <button className="new-game-btn" onClick={resetGame}>New Game</button>}
+      {(gameFinishedConditions[0] || gameFinishedConditions[1]) && <button className="w-auto h-auto p-2 text-lg m-1 rounded bg-green-400 text-green-950 font-bold" onClick={()=>window.location.reload()}>New Game</button>}
 
     </div>
   )

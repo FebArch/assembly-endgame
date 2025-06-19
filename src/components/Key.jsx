@@ -16,9 +16,9 @@ export default function Key(props){
         e.currentTarget.disabled = true
         e.currentTarget.classList.remove("btn")
         if (props.word.includes(props.letter)) {
-            e.currentTarget.classList.add("correctLetterGuessed")
+            e.currentTarget.classList.add("bg-green-400")
         }else{
-            e.currentTarget.classList.add("wrongLetterGuessed")
+            e.currentTarget.classList.add("bg-red-400")
         }
         props.handleClick(e.currentTarget.textContent)
     }
@@ -32,6 +32,6 @@ export default function Key(props){
     }
 
     return (
-        <button className="btn" onClick={handleClick}>{props.letter}</button>
+        <button className="w-[12%] border m-1 bg-amber-400 h-[20%] rounded" onClick={handleClick}>{props.letter}</button>
     )
 }
